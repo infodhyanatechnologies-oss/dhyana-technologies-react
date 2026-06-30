@@ -6,7 +6,6 @@ import {
   FileSignature,
   Store,
   CreditCard,
-  Briefcase,
 } from "lucide-react";
 
 interface GovernmentServiceProps {

@@ -5,7 +5,6 @@ import {
   BadgeDollarSign,
   Landmark,
   Users,
-  TrendingUp,
 } from "lucide-react";
 
 const loans = [

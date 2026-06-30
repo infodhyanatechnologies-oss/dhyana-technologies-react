@@ -1,10 +1,4 @@
-import {
-  ShieldCheck,
-  Clock3,
-  BadgePercent,
-  Users,
-  CheckCircle2,
-} from "lucide-react";
+import { ShieldCheck, Clock3, BadgePercent, Users } from "lucide-react";
 import WhyChooseUsImage from "../assets/44169408-fc29-4315-85c2-fd44d990fda9.png";
 
 import { Card, CardContent } from "@/components/ui/card";

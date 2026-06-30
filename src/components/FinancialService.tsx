@@ -1,6 +1,5 @@
 import { Card, CardContent } from "./ui/card";
 import {
-  Briefcase,
   FileText,
   Receipt,
   BadgePercent,

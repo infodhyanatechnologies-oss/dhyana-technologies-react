@@ -2,16 +2,16 @@ import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+} from "../components/ui/navigation-menu";
 
 import { buttonVariants } from "./ui/button";
-  import image from "../assets/compant-logo.jpeg";
+import image from "../assets/compant-logo.jpeg";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
 export const Navbar = () => {

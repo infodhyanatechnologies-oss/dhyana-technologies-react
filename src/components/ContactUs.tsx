@@ -1,7 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 
 import {
   TextField,
@@ -57,7 +57,7 @@ export const ContactUs = () => {
           message: formData.message || "No message provided",
           submitted_at: new Date().toLocaleString(),
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
       toast.success("Thank you for contacting Janhvi Enterprise!", {
@@ -203,8 +203,8 @@ export const ContactUs = () => {
                       ? formData.mobileNumber.trim() === ""
                         ? "Mobile number is required"
                         : !/^[6-9]\d{9}$/.test(formData.mobileNumber)
-                        ? "Enter a valid Indian mobile number"
-                        : ""
+                          ? "Enter a valid Indian mobile number"
+                          : ""
                       : ""
                   }
                   sx={inputStyles}

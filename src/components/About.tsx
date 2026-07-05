@@ -1,31 +1,42 @@
 import { Statistics } from "./Statistics";
-import rana from "../assets/rana.jpg";
 
 export const About = () => {
   return (
     <section id="about" className="container py-24 sm:py-30">
       <div className="bg-muted/50 border rounded-lg py-12">
-        <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
-          <img
-            src={rana}
-            alt=""
-            className="w-[400px] object-contain rounded-lg"
-          />
-          <div className="bg-green-0 flex flex-col justify-between">
+        <div className="px-6">
+          <div className="flex flex-col justify-between">
             <div className="pb-6">
               <h2 className="text-3xl md:text-4xl font-bold">
+                About{" "}
                 <span className="bg-gradient-to-b from-[#D4B15A] to-[#BB983C] text-transparent bg-clip-text">
-                  RanaPratap{" "}
+                  Dhyana Technologies
                 </span>
-                Rao
               </h2>
-              <p className="text-xl text-muted-foreground mt-4">
-                We empower dreams by helping individuals and businesses secure
-                the financial support they need. From home ownership to business
-                expansion, we provide tailored loan solutions for every stage of
-                life. Our commitment to transparency, trust, and expert guidance
-                ensures a smooth borrowing experience. Together, we help build
-                stronger futures and turn aspirations into achievements
+
+              <p className="text-xl text-muted-foreground mt-4 leading-8">
+                Dhyana Technologies is a growing IT company founded by{" "}
+                <span className="font-semibold text-foreground">
+                  Vishal Prajapati
+                </span>{" "}
+                and{" "}
+                <span className="font-semibold text-foreground">
+                  Bhavin Prajapati
+                </span>
+                . We specialize in delivering innovative digital solutions,
+                including custom software development, web applications, mobile
+                apps, UI/UX design, cloud solutions, and business automation.
+              </p>
+
+              <p className="text-xl text-muted-foreground mt-4 leading-8">
+                With over{" "}
+                <span className="font-semibold text-foreground">
+                  2+ years of experience
+                </span>
+                , our mission is to help businesses embrace technology with
+                scalable, secure, and user-friendly solutions. We are committed
+                to quality, innovation, and building long-term partnerships that
+                drive digital success.
               </p>
             </div>
 

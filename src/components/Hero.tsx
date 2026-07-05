@@ -10,17 +10,17 @@ export const Hero = () => {
       <div className="text-center lg:text-start space-y-6">
         <main className="text-5xl md:text-6xl font-bold">
           <h2 className="text-lg font-larg">
-            Elite Financial Solutions & Planning
+            Start Learning with Dhyana Technologies
           </h2>
           <h1 className="inline">
             <span className="inline text-2xl md:text-5xl font-bold text-[#BB983C]">
-              Expert Financial Solutions You Can Trust
+              Custom Software Solutions Built for Your Success{" "}
             </span>
           </h1>
         </main>
         <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Helping you achieve your financial goals with the right lending
-          options.
+          Get 100% Job Assistance & get placed in your dream company. Join our
+          job-oriented courses and advance your career in technology.
         </p>
 
         <div className="flex justify-center lg:justify-start pt-2">
@@ -41,8 +41,6 @@ export const Hero = () => {
       <div className="z-10">
         <HeroCards />
       </div>
-
-      {/* <div className="shadow"></div> */}
     </section>
   );
 };

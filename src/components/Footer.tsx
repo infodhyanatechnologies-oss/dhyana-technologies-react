@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import image from "../assets/compant-logo.jpeg";
+import image from "../assets/logo.jpeg";
 
 export const Footer = () => {
   return (
@@ -8,27 +8,29 @@ export const Footer = () => {
       className="bg-[#F9F9FA] border-t border-slate-200 mt-20"
     >
       <div className="container mx-auto px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.6fr_0.8fr_1fr_1fr] lg:gap-8">
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="flex h-12 w-12 items-center justify-center ">
                 {" "}
                 <img
                   src={image}
-                  alt="Janhvi Enterprise"
+                  alt="Dhyana Technologies"
                   className="h-10 w-10 object-contain mr-2"
                 />
               </div>
 
               <h3 className="text-2xl font-bold text-slate-900">
-                Janhvi Enterprise
+                Dhyana Technologies
               </h3>
             </div>
 
             <p className="text-slate-600 leading-8">
-              Your trusted partner for loans, tax services, government
-              registrations, and financial consulting. Helping individuals and
-              businesses achieve their goals since 2020.
+              Dhyana Technologies is committed to delivering industry-oriented
+              IT training and software development services. We empower students
+              and professionals with practical skills, live projects, expert
+              mentorship, and career support to succeed in today's
+              technology-driven world.
             </p>
           </div>
 
@@ -49,21 +51,21 @@ export const Footer = () => {
                 href="#premium-services"
                 className="block text-slate-700 transition hover:text-[#BB983C]"
               >
-                Our Premium Services
+                Courses
               </a>
 
               <a
-                href="#financial-services"
+                href="#why-choose-us"
                 className="block text-slate-700 transition hover:text-[#BB983C]"
               >
-                Financial & Tax Solutions
+                Why Choose Us
               </a>
 
               <a
-                href="#registration-services"
+                href="#contact"
                 className="block text-slate-700 transition hover:text-[#BB983C]"
               >
-                Registration & Legal Compliance Services
+                Contact Us
               </a>
             </div>
           </div>
@@ -77,11 +79,11 @@ export const Footer = () => {
               <MapPin size={20} className="mt-1 shrink-0 text-[#BB983C]" />
 
               <p className="text-slate-700 leading-8">
-                513-Golden Square,
+                511-Samruddhi Business Hub,
                 <br />
-                Nr. Kalyan Chowk, Nikol,
+                Hanspura Gam Rd, Nava Naroda,
                 <br />
-                Ahmedabad - 382350
+                Ahmedabad, Gujarat - 382330
               </p>
             </div>
           </div>
@@ -97,17 +99,17 @@ export const Footer = () => {
 
                 <div className="space-y-2">
                   <a
-                    href="tel:+918733884897"
-                    className="block  text-slate-900 transition hover:text-[#BB983C]"
+                    href="tel:+918780183269"
+                    className="block text-slate-900 transition hover:text-[#BB983C]"
                   >
-                    +91 87338 84897
+                    +91 87801 83269
                   </a>
 
                   <a
-                    href="tel:+918401434494"
-                    className="block  text-slate-900 transition hover:text-[#BB983C]"
+                    href="tel:+919664566344"
+                    className="block text-slate-900 transition hover:text-[#BB983C]"
                   >
-                    +91 84014 34494
+                    +91 96645 66344
                   </a>
                 </div>
               </div>
@@ -116,10 +118,10 @@ export const Footer = () => {
                 <Mail size={20} className="mt-1 shrink-0 text-[#BB983C]" />
 
                 <a
-                  href="mailto:janhvienterprise12@gmail.com"
-                  className=" text-slate-900 break-all transition hover:text-[#BB983C]"
+                  href="mailto:info.dhyanatechnologies@gmail.com"
+                  className="text-slate-900 transition hover:text-[#BB983C] whitespace-nowrap overflow-x-auto"
                 >
-                  janhvienterprise12@gmail.com
+                  info.dhyanatechnologies@gmail.com
                 </a>
               </div>
             </div>
@@ -129,7 +131,7 @@ export const Footer = () => {
         <div className="mt-16 border-t border-slate-200 pt-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <p className="text-slate-500">
-              © 2026 Janhvi Enterprise. All Rights Reserved.
+              © 2026 Dhyana Technologies. All Rights Reserved.
             </p>
           </div>
         </div>

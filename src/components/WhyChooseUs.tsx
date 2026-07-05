@@ -1,88 +1,94 @@
-import { ShieldCheck, Clock3, BadgePercent, Users } from "lucide-react";
-import WhyChooseUsImage from "../assets/44169408-fc29-4315-85c2-fd44d990fda9.png";
-
-import { Card, CardContent } from "../components/ui/card";
+import {
+  Briefcase,
+  GraduationCap,
+  Laptop,
+  Award,
+  Users,
+  Code2,
+} from "lucide-react";
 
 const features = [
   {
-    icon: <ShieldCheck className="h-5 w-5 text-[#BB983C]" />,
-    title: "Trusted Expertise",
-    description:
-      "Over 6 years of experience helping individuals and businesses secure the right financial solutions.",
+    icon: <Code2 size={28} />,
+    title: "Live Projects",
+    description: "Build real-world software projects with expert guidance.",
   },
   {
-    icon: <Clock3 className="h-5 w-5 text-[#BB983C]" />,
-    title: "Fast Processing",
-    description:
-      "Quick documentation review and efficient processing to save your valuable time.",
+    icon: <GraduationCap size={28} />,
+    title: "Expert Trainers",
+    description: "Learn from experienced software developers.",
   },
   {
-    icon: <BadgePercent className="h-5 w-5 text-[#BB983C]" />,
-    title: "Competitive Solutions",
-    description:
-      "Access to multiple lenders and financial products tailored to your needs.",
+    icon: <Award size={28} />,
+    title: "Certification",
+    description: "Receive an industry-recognized course certificate.",
   },
   {
-    icon: <Users className="h-5 w-5 text-[#BB983C]" />,
-    title: "Dedicated Support",
-    description:
-      "Personalized guidance from consultation to successful approval and beyond.",
+    icon: <Briefcase size={28} />,
+    title: "Placement Support",
+    description: "Resume building, mock interviews & job assistance.",
+  },
+  {
+    icon: <Laptop size={28} />,
+    title: "Online & Offline",
+    description: "Flexible batches for students and professionals.",
+  },
+  {
+    icon: <Users size={28} />,
+    title: "Career Guidance",
+    description: "One-to-one mentorship throughout your learning journey.",
   },
 ];
 
 export const WhyChooseUs = () => {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <div className=" bg-muted/50 border rounded-lg rounded-[40px] bg-[#F9F9FA] p-6 md:p-8 shadow-sm">
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Why Choose Us?
-            </h2>
+    <section id="why-choose-us" className="py-20">
+      <div className="container">
+        <div className="text-center mb-12">
+          <span className="text-[#BB983C] font-semibold uppercase tracking-widest">
+            Why Choose Us
+          </span>
 
-            <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#BB983C]" />
-          </div>
+          <h2 className="text-4xl font-bold mt-3">
+            Learn Smarter. Build Faster.
+          </h2>
 
-          <div className="grid items-center gap-8 lg:grid-cols-2">
-            {/* Left Side Features */}
-            <div className="max-w-[460px] space-y-4">
-              {features.map((feature) => (
-                <Card
-                  key={feature.title}
-                  className="
-                    max-w-[460px]
-                    border
-                    border-[#BB983C]/15
-                    bg-white
-                    shadow-md
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:shadow-lg
-                  "
-                >
-                  <CardContent className="flex items-start gap-3 p-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#FDF9EE] border border-[#BB983C]/20 shadow-sm">
-                      {feature.icon}
-                    </div>
+          <p className="max-w-1xl mx-auto mt-4 text-slate-600">
+            Dhyana Technologies helps students become industry-ready through
+            practical learning, live projects, certification, and career
+            guidance.
+          </p>
+        </div>
 
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-900">
-                        {feature.title}
-                      </h3>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="
+                rounded-2xl
+                border
+                border-slate-200
+                bg-white
+                p-7
+                shadow-sm
+                transition-all
+                duration-300
+                hover:-translate-y-2
+                hover:shadow-xl
+                hover:border-[#BB983C]
+              "
+            >
+              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#BB983C]/10 text-[#BB983C]">
+                {feature.icon}
+              </div>
 
-                      <p className="mt-1 text-sm leading-6 text-slate-600">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              <h3 className="text-xl font-semibold">{feature.title}</h3>
+
+              <p className="mt-3 text-slate-600 leading-7">
+                {feature.description}
+              </p>
             </div>
-
-            {/* Right Side Experience Circle */}
-            <img src={WhyChooseUsImage} />
-          </div>
+          ))}
         </div>
       </div>
     </section>

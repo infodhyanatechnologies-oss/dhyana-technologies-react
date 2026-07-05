@@ -19,8 +19,8 @@ function App() {
       <Hero />
       <About />
       <Services />
-      <FinancialService />
-      <GovernmentService />
+      {/* <FinancialService />
+      <GovernmentService /> */}
       <WhyChooseUs />
       <ContactUs />
       <Footer />

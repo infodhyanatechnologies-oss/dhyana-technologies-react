@@ -1,120 +1,319 @@
+import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import {
-  Home,
-  Briefcase,
-  Landmark,
-  HandCoins,
-  GraduationCap,
-  Car,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "../components/ui/dialog";
+
+import {
+  Code2,
+  Globe,
+  Smartphone,
+  Database,
+  Cloud,
+  BrainCircuit,
+  Clock3,
+  Award,
+  Laptop,
+  CheckCircle2,
 } from "lucide-react";
 
-interface ServiceProps {
+interface Course {
   title: string;
-  description: string;
   icon: JSX.Element;
+  shortDesc: string;
+  duration: string;
+  mode: string;
+  level: string;
+  description: string;
+  topics: string[];
 }
 
-const serviceList: ServiceProps[] = [
+const courses: Course[] = [
   {
-    title: "Home Loan",
+    title: "Software Development",
+    icon: <Code2 size={22} />,
+    shortDesc: "Master backend development with Python, Django & Full Stack.",
+    duration: "4-6 Months",
+    mode: "Online / Offline",
+    level: "Beginner to Advanced",
     description:
-      "Get expert guidance and competitive rates to make your dream home a reality.",
-    icon: <Home size={20} />,
+      "Learn software development from scratch and build industry-level applications with live projects.",
+    topics: [
+      "Python Programming",
+      "Object Oriented Programming",
+      "Django Framework",
+      "Django REST Framework",
+      "REST APIs",
+      "Authentication & JWT",
+      "Git & GitHub",
+      "Full Stack Development",
+      "Live Projects",
+      "Interview Preparation",
+    ],
   },
+
   {
-    title: "Personal Loan",
+    title: "Web Development",
+    icon: <Globe size={22} />,
+    shortDesc: "Become a professional Frontend & Backend Web Developer.",
+    duration: "5-6 Months",
+    mode: "Online / Offline",
+    level: "Beginner to Advanced",
     description:
-      "Quick and flexible financing solutions tailored to your personal needs.",
-    icon: <HandCoins size={20} />,
+      "Build modern websites and web applications using the latest technologies.",
+    topics: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "Nest.js",
+      "MongoDB",
+      "Deployment",
+    ],
   },
+
   {
-    title: "Business Loan",
+    title: "Mobile App Development",
+    icon: <Smartphone size={22} />,
+    shortDesc: "Create Android & iOS apps using Flutter & React Native.",
+    duration: "4 Months",
+    mode: "Online / Offline",
+    level: "Beginner",
     description:
-      "Funding solutions designed to support growth and business expansion.",
-    icon: <Briefcase size={20} />,
+      "Develop beautiful cross-platform mobile applications from scratch.",
+    topics: [
+      "Flutter",
+      "Dart",
+      "React Native",
+      "Firebase",
+      "API Integration",
+      "Push Notification",
+      "Play Store Deployment",
+      "Live Project",
+    ],
   },
+
   {
-    title: "Mortgage Loan",
-    description: "Unlock your property's value with flexible mortgage options.",
-    icon: <Landmark size={20} />,
+    title: "Database Training",
+    icon: <Database size={22} />,
+    shortDesc: "Learn SQL & NoSQL databases used in real companies.",
+    duration: "2 Months",
+    mode: "Online / Offline",
+    level: "Beginner",
+    description: "Understand database design, optimization and management.",
+    topics: [
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL",
+      "Firebase",
+      "Database Design",
+      "Relationships",
+      "Queries",
+      "Backup & Restore",
+    ],
   },
-  // {
-  //   title: "Machinery Loan",
-  //   description: "Affordable financing for machinery and equipment purchases.",
-  //   icon: <Tractor size={20} />,
-  // },
+
   {
-    title: "Education Loan",
-    description:
-      "Achieve your academic goals with flexible education financing for higher studies in India and abroad.",
-    icon: <GraduationCap size={20} />,
+    title: "Cloud & DevOps",
+    icon: <Cloud size={22} />,
+    shortDesc: "Deploy applications like professionals using Cloud & DevOps.",
+    duration: "3 Months",
+    mode: "Online / Offline",
+    level: "Intermediate",
+    description: "Master deployment, Docker, AWS and CI/CD pipelines.",
+    topics: [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "CI/CD",
+      "Linux",
+      "Nginx",
+      "Cloud Deployment",
+    ],
   },
+
   {
-    title: "Car Loan",
-    description:
-      "Drive home your dream vehicle with affordable car loan options, quick approvals, and flexible repayment plans.",
-    icon: <Car size={20} />,
+    title: "AI & Machine Learning",
+    icon: <BrainCircuit size={22} />,
+    shortDesc: "Learn Artificial Intelligence with real-world projects.",
+    duration: "5 Months",
+    mode: "Online / Offline",
+    level: "Intermediate",
+    description: "Build AI applications using Python and Machine Learning.",
+    topics: [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Machine Learning",
+      "Deep Learning",
+      "OpenAI API",
+      "ChatGPT Integration",
+      "Live AI Projects",
+    ],
   },
 ];
 
 export const Services = () => {
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+
   return (
-    <section id="premium-services" className="relative overflow-hidden py-16">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto mb-10 max-w-2xl text-center">
-          <div className="mb-4 flex items-center justify-center gap-3">
-            <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
-              Our Premium Services
-            </h2>
+    <>
+      <section id="courses" className="py-20 bg-slate-50">
+        <div className="container">
+          <div className="text-center mb-14">
+            <span className="text-[#BB983C] font-semibold uppercase tracking-widest">
+              Training Programs
+            </span>
+
+            <h2 className="text-4xl font-bold mt-3">Professional IT Courses</h2>
+
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+              Learn the latest technologies from industry experts with practical
+              training, live projects, certification and placement assistance.
+            </p>
           </div>
 
-          <p className="mt-3 text-base text-slate-600">
-            Professional guidance for taxation, GST, TDS, and financial
-            services, helping you manage your finances efficiently and stay
-            compliant.
-          </p>
-        </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {courses.map((course) => (
+              <Card
+                key={course.title}
+                className="group rounded-2xl border-0 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+              >
+                <CardContent className="p-7">
+                  <div className="w-14 h-14 rounded-xl bg-[#BB983C]/10 flex items-center justify-center text-[#BB983C] mb-6">
+                    {course.icon}
+                  </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {serviceList.map((service) => (
-            <Card
-              key={service.title}
-              className="
-                border
-                border-[#BB983C]/15
-                shadow-md
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:shadow-xl
-              "
-            >
-              <CardContent className="p-5">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-[#BB983C]/20 bg-[#FDF9EE]">
-                  <div className="text-[#BB983C]">{service.icon}</div>
+                  <h3 className="text-xl font-bold">{course.title}</h3>
+
+                  <p className="mt-3 text-slate-600 leading-7">
+                    {course.shortDesc}
+                  </p>
+
+                  <button
+                    onClick={() => setSelectedCourse(course)}
+                    className="mt-6 bg-[#BB983C] text-white px-5 py-2 rounded-lg hover:bg-[#a9862c] transition"
+                  >
+                    View Details
+                  </button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Dialog
+        open={selectedCourse !== null}
+        onOpenChange={() => setSelectedCourse(null)}
+      >
+        <DialogContent className="max-w-3xl rounded-2xl">
+          {selectedCourse && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-3xl flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-[#BB983C]/10 flex items-center justify-center text-[#BB983C]">
+                    {selectedCourse.icon}
+                  </div>
+
+                  {selectedCourse.title}
+                </DialogTitle>
+              </DialogHeader>{" "}
+              <p className="text-slate-600 mt-4 leading-7">
+                {selectedCourse.description}
+              </p>
+              <div className="grid md:grid-cols-3 gap-4 mt-8">
+                <div className="rounded-xl bg-slate-50 p-4 border">
+                  <Clock3 className="text-[#BB983C] mb-2" />
+                  <p className="text-sm text-slate-500">Duration</p>
+                  <h4 className="font-semibold">{selectedCourse.duration}</h4>
                 </div>
 
-                <h3 className="mb-2 text-lg font-bold text-slate-900">
-                  {service.title}
-                </h3>
+                <div className="rounded-xl bg-slate-50 p-4 border">
+                  <Laptop className="text-[#BB983C] mb-2" />
+                  <p className="text-sm text-slate-500">Mode</p>
+                  <h4 className="font-semibold">{selectedCourse.mode}</h4>
+                </div>
 
-                <p className="mb-4 text-sm leading-6 text-slate-600">
-                  {service.description}
-                </p>
+                <div className="rounded-xl bg-slate-50 p-4 border">
+                  <Award className="text-[#BB983C] mb-2" />
+                  <p className="text-sm text-slate-500">Level</p>
+                  <h4 className="font-semibold">{selectedCourse.level}</h4>
+                </div>
+              </div>
+              <div className="mt-10">
+                <h3 className="text-xl font-bold mb-5">What You'll Learn</h3>
 
+                <div className="grid md:grid-cols-2 gap-4">
+                  {selectedCourse.topics.map((topic) => (
+                    <div
+                      key={topic}
+                      className="flex items-center gap-3 rounded-lg border p-3"
+                    >
+                      <CheckCircle2 size={18} className="text-green-600" />
+
+                      <span>{topic}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-10 rounded-xl bg-[#BB983C]/10 border border-[#BB983C]/20 p-6">
+                <h3 className="font-bold text-xl mb-4">Course Benefits</h3>
+
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-green-600" />
+                    Live Project Training
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-green-600" />
+                    Industry Certificate
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-green-600" />
+                    Placement Assistance
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-green-600" />
+                    Interview Preparation
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-green-600" />
+                    Resume Building
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-green-600" />
+                    Lifetime Support
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 flex justify-end">
                 <button
-                  className="text-sm font-semibold text-[#BB983C] transition-colors hover:text-[#A6852F]"
                   onClick={() => {
+                    setSelectedCourse(null);
                     window.location.href = "#contact";
                   }}
+                  className="rounded-lg bg-[#BB983C] px-6 py-3 text-white font-semibold transition hover:bg-[#a9862c]"
                 >
-                  Get Consultation →
+                  Enroll Now
                 </button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };

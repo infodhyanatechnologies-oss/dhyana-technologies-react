@@ -3,16 +3,8 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "../components/ui/navigation-menu";
-
 import { buttonVariants } from "./ui/button";
-import image from "../assets/compant-logo.jpeg";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import image from "../assets/logo.jpeg";
 
 export const Navbar = () => {
   return (
@@ -27,11 +19,11 @@ export const Navbar = () => {
             >
               <img
                 src={image}
-                alt="Janhvi Enterprise"
+                alt="Dhyana Technologies"
                 className="mr-3 h-10 w-10 object-contain"
               />
 
-              <span>Janhvi Enterprise</span>
+              <span>Dhyana Technologies</span>
             </a>
           </NavigationMenuItem>
 
@@ -55,8 +47,7 @@ export const Navbar = () => {
               About
             </a>
 
-            {/* Services Dropdown */}
-            <DropdownMenu>
+            {/* <DropdownMenu>
               <DropdownMenuTrigger
                 className={`${buttonVariants({
                   variant: "ghost",
@@ -133,7 +124,16 @@ export const Navbar = () => {
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenu> */}
+
+            <a
+              href="#courses"
+              className={`${buttonVariants({
+                variant: "ghost",
+              })} text-[16px]`}
+            >
+              Courses
+            </a>
 
             <a
               href="#contact"

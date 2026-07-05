@@ -2,7 +2,6 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
-
 import {
   TextField,
   FormControl,
@@ -19,74 +18,14 @@ export const ContactUs = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     mobileNumber: "",
-    area: "",
+    email: "",
+    course: "",
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    setSubmitted(true);
-
-    const mobileRegex = /^[6-9]\d{9}$/;
-
-    if (
-      !formData.fullName.trim() ||
-      !formData.mobileNumber.trim() ||
-      !formData.area
-    ) {
-      toast.error("Please fill all required fields.");
-      return;
-    }
-
-    if (!mobileRegex.test(formData.mobileNumber.trim())) {
-      toast.error("Please enter a valid 10-digit Indian mobile number.");
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          full_name: formData.fullName,
-          mobile_number: formData.mobileNumber,
-          area: formData.area,
-          message: formData.message || "No message provided",
-          submitted_at: new Date().toLocaleString(),
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      );
-
-      toast.success("Thank you for contacting Janhvi Enterprise!", {
-        description:
-          "Your inquiry has been received. Our financial expert will connect with you shortly.",
-      });
-
-      setFormData({
-        fullName: "",
-        mobileNumber: "",
-        area: "",
-        message: "",
-      });
-
-      setSubmitted(false);
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-
-      toast.error("Unable to submit inquiry.", {
-        description: "Please try again after some time.",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
   const inputStyles = {
     "& .MuiOutlinedInput-root": {
       borderRadius: "14px",
-      backgroundColor: "#FFFFFF",
 
       "& fieldset": {
         borderColor: "#E5E7EB",
@@ -107,6 +46,69 @@ export const ContactUs = () => {
     },
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setSubmitted(true);
+
+    const mobileRegex = /^[6-9]\d{9}$/;
+
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (
+      !formData.fullName ||
+      !formData.mobileNumber ||
+      !formData.email ||
+      !formData.course
+    ) {
+      toast.error("Please fill all required fields.");
+      return;
+    }
+
+    if (!mobileRegex.test(formData.mobileNumber)) {
+      toast.error("Enter a valid mobile number.");
+      return;
+    }
+
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Enter a valid email.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          full_name: formData.fullName,
+          mobile_number: formData.mobileNumber,
+          email: formData.email,
+          course: formData.course,
+          message: formData.message || "No Message",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      toast.success("Thank you for contacting Dhyana Technologies!");
+
+      setFormData({
+        fullName: "",
+        mobileNumber: "",
+        email: "",
+        course: "",
+        message: "",
+      });
+
+      setSubmitted(false);
+    } catch {
+      toast.error("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -118,38 +120,55 @@ export const ContactUs = () => {
               </span>
 
               <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900">
-                Let's Discuss Your
-                <span className="block text-[#BB983C]">Financial Needs</span>
+                Let's Build Your Tech Career Together
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Whether you're looking for Home Loans, Personal Loans, Business
-                Loans, Mortgage Loans, Tax Services, or Government Registration
-                assistance, our experts are ready to provide the right guidance
-                and solutions.
+                Have questions about our IT courses? Our team is ready to guide
+                you and help you choose the right technology for your career.
               </p>
 
               <div className="mt-8 space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
-                  <span className="text-slate-700">Free Consultation</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
-                  <span className="text-slate-700">Quick Response</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
                   <span className="text-slate-700">
-                    Trusted Financial Guidance
+                    Professional IT Training Programs
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
-                  <span className="text-slate-700">6+ Years of Experience</span>
+                  <span className="text-slate-700">
+                    Real-Time Industry Projects
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <span className="text-slate-700">
+                    100% Practical Learning Approach
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <span className="text-slate-700">
+                    Career & Placement Support
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <span className="text-slate-700">
+                    Flexible Online & Offline Classes
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <span className="text-slate-700">
+                    2+ Years of Trusted IT Excellence
+                  </span>
                 </div>
               </div>
             </div>
@@ -158,20 +177,17 @@ export const ContactUs = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <TextField
                   fullWidth
-                  // required
                   label="Full Name"
                   value={formData.fullName}
-                  onChange={(e) => {
-                    const value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
-
+                  onChange={(e) =>
                     setFormData({
                       ...formData,
-                      fullName: value,
-                    });
-                  }}
-                  error={submitted && !formData.fullName.trim()}
+                      fullName: e.target.value,
+                    })
+                  }
+                  error={submitted && !formData.fullName}
                   helperText={
-                    submitted && !formData.fullName.trim()
+                    submitted && !formData.fullName
                       ? "Full name is required"
                       : ""
                   }
@@ -194,68 +210,80 @@ export const ContactUs = () => {
                     }
                   }}
                   error={
-                    submitted &&
-                    (formData.mobileNumber.trim() === "" ||
-                      !/^[6-9]\d{9}$/.test(formData.mobileNumber))
+                    submitted && !/^[6-9]\d{9}$/.test(formData.mobileNumber)
                   }
                   helperText={
-                    submitted
-                      ? formData.mobileNumber.trim() === ""
-                        ? "Mobile number is required"
-                        : !/^[6-9]\d{9}$/.test(formData.mobileNumber)
-                          ? "Enter a valid Indian mobile number"
-                          : ""
+                    submitted && !/^[6-9]\d{9}$/.test(formData.mobileNumber)
+                      ? "Enter a valid mobile number"
                       : ""
+                  }
+                  sx={inputStyles}
+                />
+
+                <TextField
+                  fullWidth
+                  label="Email Address"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      email: e.target.value,
+                    })
+                  }
+                  error={submitted && !formData.email}
+                  helperText={
+                    submitted && !formData.email ? "Email is required" : ""
                   }
                   sx={inputStyles}
                 />
 
                 <FormControl
                   fullWidth
-                  // required
-                  error={submitted && !formData.area}
+                  error={submitted && !formData.course}
                   sx={inputStyles}
                 >
-                  <InputLabel>Select Area</InputLabel>
+                  <InputLabel>Select Course</InputLabel>
 
                   <Select
-                    value={formData.area}
-                    label="Select Area"
+                    value={formData.course}
+                    label="Select Course"
                     onChange={(e: SelectChangeEvent) =>
                       setFormData({
                         ...formData,
-                        area: e.target.value,
+                        course: e.target.value,
                       })
                     }
                   >
-                    <MenuItem value="Ahmedabad">Ahmedabad</MenuItem>
-                    <MenuItem value="Gandhinagar">Gandhinagar</MenuItem>
-                    <MenuItem value="Nadiad">Nadiad</MenuItem>
-                    <MenuItem value="Anand">Anand</MenuItem>
-                    <MenuItem value="Kheda">Kheda</MenuItem>
-                    <MenuItem value="Mehsana">Mehsana</MenuItem>
-                    <MenuItem value="Vadodara">Vadodara</MenuItem>
-                    <MenuItem value="Surat">Surat</MenuItem>
-                    <MenuItem value="Rajkot">Rajkot</MenuItem>
-                    <MenuItem value="Bhavnagar">Bhavnagar</MenuItem>
-                    <MenuItem value="Jamnagar">Jamnagar</MenuItem>
-                    <MenuItem value="Junagadh">Junagadh</MenuItem>
-                    <MenuItem value="Patan">Patan</MenuItem>
-                    <MenuItem value="Palanpur">Palanpur</MenuItem>
-                  </Select>
+                    <MenuItem value="Python Full Stack">
+                      Python Full Stack Development
+                    </MenuItem>
 
-                  {submitted && !formData.area && (
-                    <span className="mt-1 text-sm text-red-500">
-                      Please select an area
-                    </span>
-                  )}
+                    <MenuItem value="Django">Django Development</MenuItem>
+
+                    <MenuItem value="React.js">React.js Training</MenuItem>
+
+                    <MenuItem value="Next.js">Next.js Training</MenuItem>
+
+                    <MenuItem value="Node.js">Node.js Training</MenuItem>
+
+                    <MenuItem value="Nest.js">Nest.js Training</MenuItem>
+
+                    <MenuItem value="JavaScript">JavaScript Training</MenuItem>
+
+                    <MenuItem value="Flutter">Flutter Development</MenuItem>
+
+                    <MenuItem value="AI">AI & Machine Learning</MenuItem>
+
+                    <MenuItem value="Other">Other</MenuItem>
+                  </Select>
                 </FormControl>
 
                 <TextField
                   fullWidth
                   multiline
                   rows={5}
-                  label="Message (Optional)"
+                  label="Message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({
@@ -269,9 +297,9 @@ export const ContactUs = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="h-12 w-full rounded-xl bg-[#BB983C] text-white hover:bg-[#a88735] disabled:opacity-70"
+                  className="h-12 w-full rounded-xl bg-[#BB983C] text-white hover:bg-[#a8862d]"
                 >
-                  {loading ? "Submitting..." : "Submit Inquiry"}
+                  {loading ? "Sending..." : "Book Free Demo Class"}
                 </Button>
               </form>
             </div>

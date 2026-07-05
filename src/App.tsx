@@ -6,8 +6,6 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { Services } from "./components/Services";
 import { WhyChooseUs } from "./components/WhyChooseUs";
 import "./App.css";
-import { FinancialService } from "./components/FinancialService";
-import { GovernmentService } from "./components/GovernmentService";
 import { ContactUs } from "./components/ContactUs";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { Toaster } from "sonner";

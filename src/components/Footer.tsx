@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import image from "../assets/logo.jpeg";
+import image from "../assets/logo-cropped.png";
 
 export const Footer = () => {
   return (
@@ -35,7 +35,13 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="mb-6 text-sm font-bold uppercase tracking-[3px] text-[#BB983C]">
+            <h4
+              className="mb-6 text-sm font-bold uppercase tracking-[3px] bg-clip-text text-transparent inline-block"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #0B4DBB 0%, #1565C0 40%, #38A800 100%)",
+              }}
+            >
               Quick Links
             </h4>
 
@@ -71,12 +77,12 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="mb-6 text-sm font-bold uppercase tracking-[3px] text-[#BB983C]">
+            <h4 className="mb-6 inline-block text-sm font-bold uppercase tracking-[3px] bg-gradient-to-r from-[#0B4DBB] to-[#38A800] bg-clip-text text-transparent">
               Address
             </h4>
 
             <div className="flex items-start gap-4">
-              <MapPin size={20} className="mt-1 shrink-0 text-[#BB983C]" />
+              <MapPin size={20} className="mt-1 shrink-0 text-[#0B4DBB]" />
 
               <p className="text-slate-700 leading-8">
                 511-Samruddhi Business Hub,
@@ -89,13 +95,13 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="mb-6 text-sm font-bold uppercase tracking-[3px] text-[#BB983C]">
+            <h4 className="mb-6 inline-block text-sm font-bold uppercase tracking-[3px] bg-gradient-to-r from-[#0B4DBB] to-[#38A800] bg-clip-text text-transparent">
               Contact
             </h4>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <Phone size={20} className="mt-1 shrink-0 text-[#BB983C]" />
+                <Phone size={20} className="mt-1 shrink-0 text-[#0B4DBB]" />
 
                 <div className="space-y-2">
                   <a
@@ -115,7 +121,7 @@ export const Footer = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <Mail size={20} className="mt-1 shrink-0 text-[#BB983C]" />
+                <Mail size={20} className="mt-1 shrink-0 text-[#0B4DBB]" />
 
                 <a
                   href="mailto:info.dhyanatechnologies@gmail.com"

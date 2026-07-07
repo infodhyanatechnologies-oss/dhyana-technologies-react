@@ -162,13 +162,13 @@ const courses: Course[] = [
 
 export const Services = () => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-
+  
   return (
     <>
       <section id="courses" className="py-20 bg-slate-50">
         <div className="container">
           <div className="text-center mb-14">
-            <span className="text-[#BB983C] font-semibold uppercase tracking-widest">
+            <span className="bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] text-[#BB983C] text-transparent bg-clip-text font-semibold uppercase tracking-widest">
               Training Programs
             </span>
 
@@ -180,26 +180,32 @@ export const Services = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {courses.map((course) => (
               <Card
                 key={course.title}
-                className="group rounded-2xl border-0 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+                className="group rounded-xl border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <CardContent className="p-7">
-                  <div className="w-14 h-14 rounded-xl bg-[#BB983C]/10 flex items-center justify-center text-[#BB983C] mb-6">
-                    {course.icon}
+                <CardContent className="p-5">
+                  {/* Icon */}
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10 text-[#0B4DBB]">
+                    <div className="scale-90">{course.icon}</div>
                   </div>
 
-                  <h3 className="text-xl font-bold">{course.title}</h3>
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-slate-900">
+                    {course.title}
+                  </h3>
 
-                  <p className="mt-3 text-slate-600 leading-7">
+                  {/* Description */}
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
                     {course.shortDesc}
                   </p>
 
+                  {/* Button */}
                   <button
                     onClick={() => setSelectedCourse(course)}
-                    className="mt-6 bg-[#BB983C] text-white px-5 py-2 rounded-lg hover:bg-[#a9862c] transition"
+                    className="mt-5 rounded-lg bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] px-4 py-2 text-sm font-medium text-white shadow hover:shadow-lg transition-all duration-300"
                   >
                     View Details
                   </button>
@@ -219,10 +225,9 @@ export const Services = () => {
             <>
               <DialogHeader>
                 <DialogTitle className="text-3xl flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#BB983C]/10 flex items-center justify-center text-[#BB983C]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#0B4DBB]/20 bg-gradient-to-br from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10 text-[#0B4DBB] shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md">
                     {selectedCourse.icon}
                   </div>
-
                   {selectedCourse.title}
                 </DialogTitle>
               </DialogHeader>{" "}
@@ -231,19 +236,19 @@ export const Services = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-4 mt-8">
                 <div className="rounded-xl bg-slate-50 p-4 border">
-                  <Clock3 className="text-[#BB983C] mb-2" />
+                  <Clock3 className="mb-2 text-[#0B4DBB]" />
                   <p className="text-sm text-slate-500">Duration</p>
                   <h4 className="font-semibold">{selectedCourse.duration}</h4>
                 </div>
 
                 <div className="rounded-xl bg-slate-50 p-4 border">
-                  <Laptop className="text-[#BB983C] mb-2" />
+                  <Laptop className="mb-2 text-[#0B4DBB]" />
                   <p className="text-sm text-slate-500">Mode</p>
                   <h4 className="font-semibold">{selectedCourse.mode}</h4>
                 </div>
 
                 <div className="rounded-xl bg-slate-50 p-4 border">
-                  <Award className="text-[#BB983C] mb-2" />
+                  <Award className="mb-2 text-[#0B4DBB]" />
                   <p className="text-sm text-slate-500">Level</p>
                   <h4 className="font-semibold">{selectedCourse.level}</h4>
                 </div>
@@ -257,7 +262,9 @@ export const Services = () => {
                       key={topic}
                       className="flex items-center gap-3 rounded-lg border p-3"
                     >
-                      <CheckCircle2 size={18} className="text-green-600" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10">
+                        <CheckCircle2 size={18} className="text-[#0B4DBB]" />
+                      </div>
 
                       <span>{topic}</span>
                     </div>
@@ -268,34 +275,46 @@ export const Services = () => {
                 <h3 className="font-bold text-xl mb-4">Course Benefits</h3>
 
                 <div className="grid md:grid-cols-2 gap-3">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-green-600" />
-                    Live Project Training
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10">
+                      <CheckCircle2 size={18} className="text-[#0B4DBB]" />
+                    </div>
+                    <span>Live Project Training</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-green-600" />
-                    Industry Certificate
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10">
+                      <CheckCircle2 size={18} className="text-[#0B4DBB]" />
+                    </div>
+                    <span>Industry Certificate</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-green-600" />
-                    Placement Assistance
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10">
+                      <CheckCircle2 size={18} className="text-[#0B4DBB]" />
+                    </div>
+                    <span>Placement Assistance</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-green-600" />
-                    Interview Preparation
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10">
+                      <CheckCircle2 size={18} className="text-[#0B4DBB]" />
+                    </div>
+                    <span>Interview Preparation</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-green-600" />
-                    Resume Building
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10">
+                      <CheckCircle2 size={18} className="text-[#0B4DBB]" />
+                    </div>
+                    <span>Resume Building</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-green-600" />
-                    Lifetime Support
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10">
+                      <CheckCircle2 size={18} className="text-[#0B4DBB]" />
+                    </div>
+                    <span>Lifetime Support</span>
                   </div>
                 </div>
               </div>
@@ -305,7 +324,7 @@ export const Services = () => {
                     setSelectedCourse(null);
                     window.location.href = "#contact";
                   }}
-                  className="rounded-lg bg-[#BB983C] px-6 py-3 text-white font-semibold transition hover:bg-[#a9862c]"
+                  className="mt-6 bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] text-white px-5 py-2 rounded-lg hover:from-[#0A43A3] hover:via-[#1459B0] hover:to-[#2F9500] transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   Enroll Now
                 </button>

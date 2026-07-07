@@ -57,37 +57,37 @@ function DialogContent({
 }: React.ComponentProps<typeof DialogPrimitive.Content>) {
   return (
     <DialogPortal>
-      <DialogOverlay className="backdrop-blur-sm bg-black/70" />
+      <DialogOverlay className="bg-black/70 backdrop-blur-md" />
 
       <DialogPrimitive.Content
         className={`
-          fixed
-          left-1/2
-          top-1/2
-          z-50
-
-          w-[95vw]
-          max-w-5xl
-          max-h-[90vh]
-
-          -translate-x-1/2
-          -translate-y-1/2
-
-          overflow-hidden
-          rounded-3xl
-
-          border
-          border-slate-200
+          fixed left-1/2 top-1/2 z-50
+          w-[95vw] max-w-5xl max-h-[90vh]
+          -translate-x-1/2 -translate-y-1/2
+          overflow-hidden rounded-3xl
 
           bg-white
 
-          shadow-[0_20px_80px_rgba(0,0,0,0.25)]
+          border border-transparent
+          bg-clip-padding
 
-          animate-in
-          fade-in
-          zoom-in-95
+          shadow-2xl shadow-[#0B4DBB]/20
 
-          duration-300
+          animate-in fade-in zoom-in-95 duration-300
+
+          before:absolute
+          before:inset-0
+          before:-z-10
+          before:rounded-3xl
+          before:p-[1px]
+          before:bg-gradient-to-r
+          before:from-[#0B4DBB]
+          before:via-[#1565C0]
+          before:to-[#38A800]
+          before:[mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]
+          before:[mask-composite:exclude]
+          before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]
+          before:[-webkit-mask-composite:xor]
 
           ${className}
         `}
@@ -95,23 +95,30 @@ function DialogContent({
       >
         {/* Header */}
 
-        <div className="flex items-center justify-between border-b bg-gradient-to-r from-[#BB983C] to-[#D4B15A] px-8 py-5">
+        <div className="flex items-center justify-between bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] px-8 py-6">
           <div>
             <h2 className="text-3xl font-bold text-white">Course Details</h2>
 
-            <p className="mt-1 text-white/80">
+            <p className="mt-1 text-sm text-white/90">
               Learn from industry professionals
             </p>
           </div>
 
           <DialogPrimitive.Close
             className="
-            rounded-full
-            bg-white/20
-            p-2
-            text-white
-            transition
-            hover:bg-white/30
+              flex h-10 w-10 items-center justify-center
+              rounded-full
+              bg-white/15
+              text-white
+              backdrop-blur-sm
+              transition-all
+              duration-300
+              hover:rotate-90
+              hover:scale-110
+              hover:bg-white/25
+              focus:outline-none
+              focus:ring-2
+              focus:ring-white/50
             "
           >
             <X size={22} />
@@ -120,7 +127,7 @@ function DialogContent({
 
         {/* Body */}
 
-        <div className="max-h-[calc(90vh-90px)] overflow-y-auto p-8">
+        <div className="max-h-[calc(90vh-96px)] overflow-y-auto bg-white p-8">
           {children}
         </div>
       </DialogPrimitive.Content>

@@ -3,7 +3,7 @@ html {
 }
 
 /* HeroCards background shadow */
-.shadow {
+/* .shadow {
   position: absolute;
   background: hsl(var(--primary) / 0%);
   border-radius: 24px;
@@ -15,7 +15,7 @@ html {
   filter: blur(150px);
   will-change: transform;
   animation: shadow-slide infinite 4s linear alternate;
-}
+} */
 
 @keyframes shadow-slide {
   from {
@@ -46,12 +46,12 @@ html {
 }
 
 @media (max-width: 768px) {
-  .shadow {
+  /* .shadow {
     top: 70px;
     width: 100px;
     height: 350px;
     filter: blur(60px);
-  }
+  } */
 
   @keyframes shadow-slide {
     from {

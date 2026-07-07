@@ -4,7 +4,7 @@ import {
   NavigationMenuList,
 } from "../components/ui/navigation-menu";
 import { buttonVariants } from "./ui/button";
-import image from "../assets/logo.jpeg";
+import image from "../assets/logo-cropped.png";
 
 export const Navbar = () => {
   return (

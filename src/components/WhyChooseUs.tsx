@@ -45,7 +45,7 @@ export const WhyChooseUs = () => {
     <section id="why-choose-us" className="py-20">
       <div className="container">
         <div className="text-center mb-12">
-          <span className="text-[#BB983C] font-semibold uppercase tracking-widest">
+          <span className="bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] text-[#BB983C] text-transparent bg-clip-text font-semibold uppercase tracking-widest">
             Why Choose Us
           </span>
 
@@ -78,7 +78,7 @@ export const WhyChooseUs = () => {
                 hover:border-[#BB983C]
               "
             >
-              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#BB983C]/10 text-[#BB983C]">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-r from-[#0B4DBB]/10 via-[#1565C0]/10 to-[#38A800]/10 flex items-center justify-center text-[#0B4DBB] mb-6">
                 {feature.icon}
               </div>
 

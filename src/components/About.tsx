@@ -9,7 +9,7 @@ export const About = () => {
             <div className="pb-6">
               <h2 className="text-3xl md:text-4xl font-bold">
                 About{" "}
-                <span className="bg-gradient-to-b from-[#D4B15A] to-[#BB983C] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] text-transparent bg-clip-text">
                   Dhyana Technologies
                 </span>
               </h2>

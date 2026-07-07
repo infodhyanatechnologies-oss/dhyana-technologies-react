@@ -91,7 +91,11 @@ export const ContactUs = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
-      toast.success("Thank you for contacting Dhyana Technologies!");
+      toast.success(
+        <span className="bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] bg-clip-text text-transparent font-semibold">
+          Thank you for contacting Dhyana Technologies!
+        </span>,
+      );
 
       setFormData({
         fullName: "",
@@ -115,7 +119,7 @@ export const ContactUs = () => {
         <div className="overflow-hidden rounded-[40px] border border-slate-200 bg-[#F9F9FA] shadow-sm">
           <div className="grid lg:grid-cols-2">
             <div className="flex flex-col justify-center bg-[#F9F9FA] p-8 lg:p-14">
-              <span className="inline-flex w-fit rounded-full bg-[#BB983C]/10 px-4 py-2 text-sm font-medium text-[#BB983C]">
+              <span className="inline-flex w-fit rounded-full bg-gradient-to-r from-[#0B4DBB]/10 to-[#38A800]/10 border border-[#0B4DBB]/20 px-4 py-2 text-sm font-medium text-[#0B4DBB]">
                 Contact Us
               </span>
 
@@ -130,42 +134,42 @@ export const ContactUs = () => {
 
               <div className="mt-8 space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-[#0B4DBB] to-[#38A800]" />
                   <span className="text-slate-700">
                     Professional IT Training Programs
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-[#0B4DBB] to-[#38A800]" />
                   <span className="text-slate-700">
                     Real-Time Industry Projects
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-[#0B4DBB] to-[#38A800]" />
                   <span className="text-slate-700">
                     100% Practical Learning Approach
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-[#0B4DBB] to-[#38A800]" />
                   <span className="text-slate-700">
                     Career & Placement Support
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-[#0B4DBB] to-[#38A800]" />
                   <span className="text-slate-700">
                     Flexible Online & Offline Classes
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#BB983C]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-[#0B4DBB] to-[#38A800]" />
                   <span className="text-slate-700">
                     2+ Years of Trusted IT Excellence
                   </span>
@@ -297,7 +301,7 @@ export const ContactUs = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="h-12 w-full rounded-xl bg-[#BB983C] text-white hover:bg-[#a8862d]"
+                  className="h-12 w-full rounded-xl bg-gradient-to-r from-[#0B4DBB] via-[#1565C0] to-[#38A800] text-white hover:from-[#0A43A3] hover:via-[#1459B0] hover:to-[#2F9500] transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   {loading ? "Sending..." : "Book Free Demo Class"}
                 </Button>

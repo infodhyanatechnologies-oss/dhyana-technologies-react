@@ -82,8 +82,8 @@ export const ContactUs = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          full_name: formData.fullName,
-          mobile_number: formData.mobileNumber,
+          name: formData.fullName,
+          phone: formData.mobileNumber,
           email: formData.email,
           course: formData.course,
           message: formData.message || "No Message",

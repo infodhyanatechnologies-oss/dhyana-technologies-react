@@ -1,26 +1,33 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export const WhatsAppButton = () => {
-  const phoneNumber = "+918401434494";
+  const phoneNumber = "+918780183269";
 
   const message = `
-Hello Janhvi Enterprise,
+Hello Dhyana Technologies,
 
-I visited your website and would like more information regarding:
+I visited your website and I'm interested in learning more about your courses and services.
 
-□ Home Loan
-□ Personal Loan
-□ Business Loan
-□ Mortgage Loan
-□ CIBIL Improvement
+I would like information regarding:
 
-Please contact me.
+□ Python Development
+□ Django Development
+□ Full Stack Development
+□ React.js Training
+□ Node.js Training
+□ Next.js Training
+□ Nest.js Training
+□ JavaScript Training
+□ Software Development Services
+□ Internship / Placement Assistance
+
+Please contact me with more details.
 
 Thank you.
 `;
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message
+    message,
   )}`;
 
   return (
